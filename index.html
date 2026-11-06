@@ -1,640 +1,548 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" data-theme="auto">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Sergio Jose Valente</title>
-    <link href="dist/css/final.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sergio Jose Valente Da Cruz — Full-Stack Developer</title>
+    <meta name="description" content="Sergio Jose Valente Da Cruz — Full-Stack Developer and IT professional in Dili, Timor-Leste. Go, PHP (CodeIgniter 4, Laravel), MySQL, PostgreSQL. Creator of Moxtel." />
+    <meta name="author" content="Sergio Jose Valente Da Cruz" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Sergio Jose Valente Da Cruz — Full-Stack Developer" />
+    <meta property="og:description" content="Building secure, scalable systems for Timor-Leste. Go · PHP · MySQL · PostgreSQL · Docker." />
+    <meta property="og:url" content="https://sergiojosevalente.github.io/" />
+    <meta property="og:image" content="https://sergiojosevalente.github.io/assets/img/sergio.webp" />
+    <meta name="theme-color" content="#0b1120" />
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/site.css" />
     <script>
-      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
+      // Apply the saved theme before the page paints (no flash).
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Sergio Jose Valente Da Cruz",
+        "jobTitle": "Full-Stack Developer",
+        "worksFor": { "@type": "Organization", "name": "Telkomcel" },
+        "address": { "@type": "PostalAddress", "addressLocality": "Dili", "addressCountry": "TL" },
+        "email": "mailto:sergiojosevalente@gmail.com",
+        "url": "https://sergiojosevalente.github.io/",
+        "sameAs": [
+          "https://linkedin.com/in/sergio-jose-valente-da-cruz-4430161b8",
+          "https://github.com/sergiojosevalente"
+        ]
       }
     </script>
   </head>
   <body>
-    <!-- Header Start -->
-    <header class="absolute top-0 left-0 z-10 flex w-full items-center bg-transparent">
-      <div class="container">
-        <div class="relative flex items-center justify-between">
-          <div class="px-4">
-            <a href="#home" class="block py-6 text-lg font-bold text-primary">sergiojosevalente</a>
-          </div>
-          <div class="flex items-center px-4">
-            <button id="hamburger" name="hamburger" type="button" class="absolute right-4 block lg:hidden">
-              <span class="hamburger-line origin-top-left transition duration-300 ease-in-out"></span>
-              <span class="hamburger-line transition duration-300 ease-in-out"></span>
-              <span class="hamburger-line origin-bottom-left transition duration-300 ease-in-out"></span>
-            </button>
+    <a class="skip" href="#main">Skip to content</a>
 
-            <nav
-              id="nav-menu"
-              class="absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-white py-5 shadow-lg dark:bg-dark dark:shadow-slate-500 lg:static lg:block lg:max-w-full lg:rounded-none lg:bg-transparent lg:shadow-none lg:dark:bg-transparent"
-            >
-              <ul class="block lg:flex">
-                <li class="group">
-                  <a href="#home" class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Home</a>
-                </li>
-                <li class="group">
-                  <a href="#about" class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">About Me</a>
-                </li>
-                <li class="group">
-                  <a href="#portfolio" class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Portfolio</a>
-                </li>
-                <li class="group">
-                  <a href="#clients" class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Clients</a>
-                </li>
-                <li class="group">
-                  <a href="#blog" class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Blog</a>
-                </li>
-                <li class="group">
-                  <a href="#contact" class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Contact</a>
-                </li>
-                <li class="mt-3 flex items-center pl-8 lg:mt-0">
-                  <div class="flex">
-                    <span class="mr-2 text-sm text-slate-500">light</span>
-                    <input type="checkbox" class="hidden" id="dark-toggle" />
-                    <label for="dark-toggle">
-                      <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1">
-                        <div class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out"></div>
-                      </div>
-                    </label>
-                    <span class="ml-2 text-sm text-slate-500">dark</span>
-                  </div>
-                </li>
-              </ul>
-            </nav>
-          </div>
+    <header class="nav" id="top">
+      <div class="wrap nav-inner">
+        <a href="#top" class="brand" aria-label="Sergio Jose Valente, home">sergio<span>.</span></a>
+        <nav id="menu" class="menu" aria-label="Main">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#moxtel">Moxtel</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="icon-btn" id="theme" type="button" aria-label="Switch light or dark theme" title="Light / dark">
+            <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+            <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          </button>
+          <a class="btn btn-sm btn-primary hide-sm" href="assets/cv/Sergio-Jose-Valente-Da-Cruz-CV.pdf" download>Download CV</a>
+          <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </button>
         </div>
       </div>
     </header>
-    <!-- Header End -->
 
-    <!-- Hero Section Start -->
-    <section id="home" class="pt-36 dark:bg-dark">
-      <div class="container">
-        <div class="flex flex-wrap">
-          <div class="w-full self-center px-4 lg:w-1/2">
-            <h1 class="text-base font-semibold text-primary md:text-xl">
-              Hello Everyone 👋, I’m
-              <span class="mt-1 block text-4xl font-bold text-dark dark:text-white lg:text-5xl">
-                Sergio Jose Valente
-              </span>
-            </h1>
-            <h2 class="mb-5 text-lg font-medium text-secondary lg:text-2xl">
-              Full-Stack Developer & <span class="text-dark dark:text-white">Database Trainer</span>
-            </h2>
-            <p class="mb-10 font-medium leading-relaxed text-secondary">
-              I specialize in building secure, scalable web applications and managing database systems that power both public and private sector platforms in Timor-Leste. With experience in PHP, Go, PostgreSQL, and MySQL, I enjoy transforming complex systems into accessible tools — whether through <strong>backend engineering</strong>, <strong>real-time monitoring</strong>, or <strong>training future developers</strong>.
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div class="hero-text reveal">
+            <p class="eyebrow"><span class="dot"></span> Open to collaboration · Dili, Timor-Leste</p>
+            <h1>Hi, I'm <span class="grad">Sergio Jose Valente</span></h1>
+            <p class="role">Full-Stack Developer · O&amp;M VAS/IN Support Officer at <strong>Telkomcel</strong></p>
+            <p class="lead">
+              I design and build secure, scalable systems — registration portals, messaging platforms, monitoring
+              and automation — for corporate and government institutions in Timor-Leste, using Go, PHP and modern web technology.
             </p>
-            <a href="#contact" class="rounded-full bg-primary py-3 px-8 text-base font-semibold text-white transition duration-300 ease-in-out hover:opacity-80 hover:shadow-lg">
-              Contact Me
-            </a>
+            <div class="cta">
+              <a class="btn btn-primary" href="assets/cv/Sergio-Jose-Valente-Da-Cruz-CV.pdf" download>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>
+                Download CV
+              </a>
+              <a class="btn btn-ghost" href="#projects">View projects</a>
+              <a class="btn btn-ghost" href="#contact">Contact me</a>
+            </div>
+            <ul class="socials" aria-label="Social profiles">
+              <li><a href="https://linkedin.com/in/sergio-jose-valente-da-cruz-4430161b8" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a></li>
+              <li><a href="https://github.com/sergiojosevalente" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg></a></li>
+              <li><a href="https://facebook.com/sergio.valente.3517" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.07C24 5.45 18.63.07 12 .07S0 5.45 0 12.07c0 5.99 4.39 10.95 10.13 11.85v-8.38H7.08v-3.47h3.05V9.36c0-3.01 1.79-4.67 4.53-4.67 1.31 0 2.69.24 2.69.24v2.95h-1.51c-1.49 0-1.96.93-1.96 1.88v2.25h3.33l-.53 3.47h-2.8v8.38C19.61 23.03 24 18.06 24 12.07z"/></svg></a></li>
+              <li><a href="https://instagram.com/sergio_jose_valente" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.9 5.9 0 0 0-2.13 1.38A5.9 5.9 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13a5.9 5.9 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.9 5.9 0 0 0 2.13-1.38 5.9 5.9 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.9 5.9 0 0 0-1.38-2.13A5.9 5.9 0 0 0 19.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg></a></li>
+              <li><a href="https://x.com/sergiojose031" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.15h7.6l5.24 6.93 6.06-6.93zm-1.29 19.5h2.04L6.48 3.24H4.3l13.31 17.41z"/></svg></a></li>
+              <li><a href="https://www.tiktok.com/@sergio_jose_valente" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a></li>
+            </ul>
           </div>
-          <div class="w-full self-end px-4 lg:w-1/2">
-            <div class="relative mt-10 lg:right-0 lg:mt-9">
-              <img src="dist/img/sergiojosevalente.png" alt="Sergio Jose Valente" class="relative z-10 mx-auto max-w-full" />
-              <span class="absolute bottom-0 left-1/2 -translate-x-1/2 md:scale-125">
-                <svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    fill="#14b8a6"
-                    d="M47.4,-51C59.2,-35.6,65.1,-17.8,63.4,-1.7C61.7,14.5,52.6,28.9,40.8,36.6C28.9,44.2,14.5,45,-2,47C-18.4,49,-36.8,52.1,-45.4,44.5C-53.9,36.8,-52.5,18.4,-51.2,1.3C-49.9,-15.8,-48.7,-31.7,-40.2,-47.1C-31.7,-62.4,-15.8,-77.3,1,-78.3C17.8,-79.2,35.6,-66.3,47.4,-51Z"
-                    transform="translate(100 100) scale(1.1)"
-                  />
-                </svg>
-              </span>
+          <div class="hero-photo reveal">
+            <div class="photo-ring">
+              <img src="assets/img/sergio.webp" alt="Portrait of Sergio Jose Valente" width="720" height="969" />
+            </div>
+            <div class="float-card fc-1"><strong>Go</strong><span>backend &amp; services</span></div>
+            <div class="float-card fc-2"><strong>Best IT Apps</strong><span>Telkomcel MNO 2025</span></div>
+          </div>
+        </div>
+        <div class="wrap stats reveal">
+          <div><strong>3+</strong><span>years in IT operations &amp; development</span></div>
+          <div><strong>20+</strong><span>systems delivered for business &amp; government</span></div>
+          <div><strong>4</strong><span>awards &amp; recognitions</span></div>
+          <div><strong>17</strong><span>certifications</span></div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="section">
+        <div class="wrap about-grid">
+          <div class="reveal">
+            <p class="kicker">About me</p>
+            <h2>Technology that uplifts local systems</h2>
+            <p>
+              I'm a Full-Stack Developer and IT professional with over three years of hands-on experience in database support,
+              system integration and IT operations. At Telkomcel I work as an O&amp;M VAS/IN Support Officer, and I have designed and
+              delivered web platforms and tools for corporate and government institutions.
+            </p>
+            <p>
+              Originally from Bauro Village, Iralafai, Lospalos — Lautem Municipality, I carry a deep sense of purpose in using technology
+              to strengthen local systems and drive sustainable progress in Timor-Leste. I value teamwork, integrity and accountability,
+              and I like to approach every responsibility with a proactive, solution-oriented mindset.
+            </p>
+          </div>
+          <dl class="facts reveal">
+            <div><dt>Based in</dt><dd>Dili, Timor-Leste</dd></div>
+            <div><dt>Current role</dt><dd>O&amp;M VAS/IN Support Officer, Telkomcel</dd></div>
+            <div><dt>Education</dt><dd>B.Eng. Telecommunications Engineering, Telkom University (GPA 3.36)</dd></div>
+            <div><dt>Languages</dt><dd>Tetum (native) · English (professional) · Bahasa Indonesia · Portuguese (basic)</dd></div>
+            <div><dt>Also</dt><dd>Co-founder of Multi Science Academy · Database training instructor</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience" class="section alt">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <p class="kicker">Experience</p>
+            <h2>Where I've worked</h2>
+          </div>
+          <ol class="timeline">
+            <li class="reveal">
+              <div class="tl-head"><h3>O&amp;M VAS/IN Support Officer</h3><span class="when">Jun 2023 – Present</span></div>
+              <p class="org">Telkomcel · Dili, Timor-Leste</p>
+              <ul>
+                <li>Design application flows and database schemas, and lead development planning for secure, scalable internal systems.</li>
+                <li>Build and maintain MySQL-based platforms: internal dashboards, broadcast systems and employee portals.</li>
+                <li>Support internal IT systems and Value-Added Services (VAS) for availability and performance.</li>
+                <li>Integrate real-time monitoring and alerting, including Telegram-bot alerts written in Go.</li>
+                <li>Troubleshoot backend services, perform root-cause analysis, and run end-to-end testing and UAT.</li>
+              </ul>
+            </li>
+            <li class="reveal">
+              <div class="tl-head"><h3>Database Training Instructor</h3><span class="when">May 2024 – Aug 2024</span></div>
+              <p class="org">INDMO · Dili, Timor-Leste</p>
+              <ul>
+                <li>Hands-on training in database design and development for employee management systems.</li>
+                <li>Relational database design in MySQL and backend integration with PHP (CodeIgniter 3): CRUD, authentication, deployment.</li>
+              </ul>
+            </li>
+            <li class="reveal">
+              <div class="tl-head"><h3>Officer Development Program</h3><span class="when">Nov 2022 – Jun 2023</span></div>
+              <p class="org">Telkomcel · Dili, Timor-Leste</p>
+              <ul>
+                <li>REST APIs and dashboards for hardware site monitoring; automated server-log parsing into real-time records.</li>
+                <li>Token-based login with Telegram and JWT; IoT monitoring of DC voltage and server-room temperature.</li>
+              </ul>
+            </li>
+            <li class="reveal">
+              <div class="tl-head"><h3>Co-Founder</h3><span class="when">Aug 2021 – Present</span></div>
+              <p class="org">Multi Science Academy (MSA) · Dili, Timor-Leste</p>
+              <ul>
+                <li>Designed a full-stack education platform with e-learning, job matching and a blog (Go, Express.js, MongoDB, Next.js).</li>
+                <li>Guest lecture “Why Technology” at Assales Baucau Fatumaca (July 2024) on technology in youth education.</li>
+              </ul>
+            </li>
+            <li class="reveal">
+              <div class="tl-head"><h3>Research Assistant</h3><span class="when">Jul 2021 – Sep 2022</span></div>
+              <p class="org">Telkom University — CPS Laboratory &amp; BYSONIC/Corby-Net · West Java</p>
+              <ul>
+                <li>Cyber academy (Cyber Physical Systems lab), UI/UX discussion material, and an automatic parking prototype with PIR and ultrasonic sensors.</li>
+                <li>IoT fundamentals and embedded systems training (MBKM Research); training on biomedical sensors.</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="section">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <p class="kicker">Portfolio</p>
+            <h2>Selected projects</h2>
+            <p class="sub">Real systems built for public, private and government organizations. Internal systems are described without access details.</p>
+          </div>
+          <div class="filters reveal" role="group" aria-label="Filter projects">
+            <button type="button" class="chip active" data-filter="all">All</button>
+            <button type="button" class="chip" data-filter="public">Public sites</button>
+            <button type="button" class="chip" data-filter="internal">Internal systems</button>
+          </div>
+          <div class="cards" id="project-list">
+            <article class="card reveal" data-kind="public">
+              <a class="thumb" href="https://jogoscplp2025.tl/" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/projects/jogos-cplp.webp" alt="Jogos CPLP 2025 registration portal" width="1200" height="553" /></a>
+              <div class="card-body">
+                <p class="meta">Apr – Jul 2025</p>
+                <h3>Jogos CPLP 2025 Registration Portal</h3>
+                <p>End-to-end accreditation for national and international delegations: approvals, documents, QR ID cards and a Flutter app for on-site validation with offline sync.</p>
+                <ul class="tags"><li>Go</li><li>PostgreSQL</li><li>Redis</li><li>Docker</li><li>Flutter</li></ul>
+                <a class="link" href="https://jogoscplp2025.tl/" target="_blank" rel="noopener">jogoscplp2025.tl ↗</a>
+              </div>
+            </article>
+            <article class="card reveal" data-kind="public">
+              <a class="thumb" href="https://xananagusmaoreadingroom.tl/" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/projects/xanana-reading-room.webp" alt="Xanana Gusmão Reading Room web portal" width="1200" height="553" /></a>
+              <div class="card-body">
+                <p class="meta">Nov 2024 – Feb 2025</p>
+                <h3>Xanana Gusmão Reading Room Portal</h3>
+                <p>Member and event registration with document validation, approval workflows, QR-coded PDF certificates with public verification, and OTP activation.</p>
+                <ul class="tags"><li>Go</li><li>Python</li><li>CodeIgniter 4</li><li>MySQL</li></ul>
+                <a class="link" href="https://xananagusmaoreadingroom.tl/" target="_blank" rel="noopener">xananagusmaoreadingroom.tl ↗</a>
+              </div>
+            </article>
+            <article class="card reveal" data-kind="public">
+              <a class="thumb" href="https://tais.tcel.tl/" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/projects/tais2025.webp" alt="TAIS 2025 summit platform" width="1200" height="549" /></a>
+              <div class="card-body">
+                <p class="meta">Nov 2024 – Feb 2025</p>
+                <h3>TAIS 2025 Summit Platform</h3>
+                <p>Registration and content platform for Telkomcel's flagship annual summit, with QR check-in, live attendance and room-capacity dashboards and badge printing.</p>
+                <ul class="tags"><li>Go</li><li>CodeIgniter 4</li><li>MySQL</li><li>Flutter</li></ul>
+                <a class="link" href="https://tais.tcel.tl/" target="_blank" rel="noopener">tais.tcel.tl ↗</a>
+              </div>
+            </article>
+            <article class="card reveal" data-kind="public">
+              <a class="thumb" href="https://intl.tl/" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/projects/intl.webp" alt="INTL employee management system" width="1200" height="548" /></a>
+              <div class="card-body">
+                <p class="meta">Oct 2023 – Mar 2024</p>
+                <h3>INTL Employee Management System</h3>
+                <p>Secure employee records for Timor-Leste's National Printing Office, with dashboards, CSV/XLS/PDF reports and role-based access.</p>
+                <ul class="tags"><li>Go</li><li>CodeIgniter 4</li><li>MySQL</li></ul>
+                <a class="link" href="https://intl.tl/" target="_blank" rel="noopener">intl.tl ↗</a>
+              </div>
+            </article>
+            <article class="card reveal" data-kind="public">
+              <div class="thumb thumb-art art-sms" aria-hidden="true"><span>SMS</span></div>
+              <div class="card-body">
+                <p class="meta">Jul – Aug 2025</p>
+                <h3>SMS Community</h3>
+                <p>Mass-SMS campaign portal with community groups, scheduling, quota checks via the charging system (OCS), delivery reports and OTP login.</p>
+                <ul class="tags"><li>Go</li><li>PostgreSQL</li><li>Redis</li><li>Docker</li></ul>
+                <a class="link" href="https://smscom.telkomcel.tl/" target="_blank" rel="noopener">smscom.telkomcel.tl ↗</a>
+              </div>
+            </article>
+            <article class="card reveal" data-kind="public">
+              <div class="thumb thumb-art art-tds" aria-hidden="true"><span>TDS</span></div>
+              <div class="card-body">
+                <p class="meta">Nov 2024 – Feb 2025</p>
+                <h3>Telin Digital Solution (TDS)</h3>
+                <p>Corporate profile site telling the TDS brand story: who they are, what they do, where they operate and what sets them apart.</p>
+                <ul class="tags"><li>Go</li><li>CodeIgniter 4</li><li>MySQL</li></ul>
+                <a class="link" href="https://tds.tl/" target="_blank" rel="noopener">tds.tl ↗</a>
+              </div>
+            </article>
+            <article class="card reveal" data-kind="public">
+              <a class="thumb" href="https://biblioteka.ics.edu.tl/" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/projects/icsportal.webp" alt="ICS library management system" width="1200" height="552" /></a>
+              <div class="card-body">
+                <p class="meta">Library system</p>
+                <h3>ICS Library Management System</h3>
+                <p>Barcode-based book lending, student tracking and visitor monitoring.</p>
+                <ul class="tags"><li>CodeIgniter 4</li><li>MySQL</li></ul>
+                <a class="link" href="https://biblioteka.ics.edu.tl/" target="_blank" rel="noopener">biblioteka.ics.edu.tl ↗</a>
+              </div>
+            </article>
+            <article class="card reveal" data-kind="public">
+              <a class="thumb" href="https://multiscienceacademy.com/" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/projects/msaskolas.webp" alt="Multi Science Academy platform" width="1200" height="548" /></a>
+              <div class="card-body">
+                <p class="meta">Education platform</p>
+                <h3>Multi Science Academy (MSA)</h3>
+                <p>Digital classrooms, bootcamps and academic job matching on a modern full-stack platform.</p>
+                <ul class="tags"><li>Go</li><li>Express.js</li><li>MongoDB</li><li>Next.js</li></ul>
+                <a class="link" href="https://multiscienceacademy.com/" target="_blank" rel="noopener">multiscienceacademy.com ↗</a>
+              </div>
+            </article>
+            <article class="card reveal" data-kind="internal">
+              <div class="thumb"><img loading="lazy" src="assets/img/projects/enterpriseticketing.webp" alt="Enterprise ticketing system" width="1200" height="556" /></div>
+              <div class="card-body">
+                <p class="meta">Dec 2024 – Mar 2025 · <span class="badge">Internal</span></p>
+                <h3>Telkomcel Enterprise Ticketing</h3>
+                <p>Corporate complaint and incident ticketing synced with the Enterprise System, auto-tickets from service monitoring, Telegram updates and MTTR dashboards.</p>
+                <ul class="tags"><li>Laravel</li><li>Go</li><li>MySQL</li><li>CI/CD</li></ul>
+              </div>
+            </article>
+            <article class="card reveal" data-kind="internal">
+              <div class="thumb"><img loading="lazy" src="assets/img/projects/vasbroadcast.webp" alt="Broadcast messaging system" width="1200" height="547" /></div>
+              <div class="card-body">
+                <p class="meta">Feb – Aug 2024 · <span class="badge">Internal</span></p>
+                <h3>Telkomcel Broadcast Messaging</h3>
+                <p>SMS campaign platform for broadcast messaging to subscribers, with a secure backend control panel.</p>
+                <ul class="tags"><li>Go</li><li>CodeIgniter 4</li><li>MySQL</li></ul>
+              </div>
+            </article>
+            <article class="card reveal" data-kind="internal">
+              <div class="thumb"><img loading="lazy" src="assets/img/projects/vasinternal.webp" alt="VAS management system" width="1200" height="546" /></div>
+              <div class="card-body">
+                <p class="meta">Jul – Nov 2023 · <span class="badge">Internal</span></p>
+                <h3>Telkomcel VAS Management System</h3>
+                <p>Manages Value-Added Services routing across SMS, USSD and portal systems.</p>
+                <ul class="tags"><li>Go</li><li>CodeIgniter 4</li><li>MySQL</li></ul>
+              </div>
+            </article>
+            <article class="card reveal" data-kind="internal">
+              <div class="thumb thumb-art art-sim" aria-hidden="true"><span>KYC</span></div>
+              <div class="card-body">
+                <p class="meta">Aug – Sep 2024 · <span class="badge">Internal</span></p>
+                <h3>SIM Registration Backend</h3>
+                <p>Registrations from three channels with KYC validation and de-duplication, an e-portal review queue with audit trail, and service activation on approval.</p>
+                <ul class="tags"><li>Go</li><li>MySQL</li><li>Telegram Bot API</li></ul>
+              </div>
+            </article>
+            <article class="card reveal" data-kind="internal">
+              <div class="thumb thumb-art art-mno" aria-hidden="true"><span>MNO</span></div>
+              <div class="card-body">
+                <p class="meta">Aug – Sep 2024 · <span class="badge">Internal</span></p>
+                <h3>MNO Activity Monitoring &amp; Approval</h3>
+                <p>Planned network activities with SOP/MOP attachments, automatic impact levels and tiered approvals right from Telegram.</p>
+                <ul class="tags"><li>Go</li><li>CodeIgniter 4</li><li>Telegram Bot API</li></ul>
+              </div>
+            </article>
+            <article class="card reveal" data-kind="internal">
+              <div class="thumb thumb-art art-ops" aria-hidden="true"><span>/ops</span></div>
+              <div class="card-body">
+                <p class="meta">Dec 2024 · <span class="badge">Internal</span></p>
+                <h3>IP Transit Traffic ChatOps</h3>
+                <p>Read-only Telegram commands for traffic, ping, trace and BGP state, with allowlists, rate limits and command logs.</p>
+                <ul class="tags"><li>Go</li><li>PRTG API</li><li>Telegram Bot API</li></ul>
+              </div>
+            </article>
+            <article class="card reveal" data-kind="internal">
+              <div class="thumb thumb-art art-ssl" aria-hidden="true"><span>SSL</span></div>
+              <div class="card-body">
+                <p class="meta">Aug 2025 · <span class="badge">Internal</span></p>
+                <h3>SSL &amp; Domain Monitoring</h3>
+                <p>Automated certificate, DNS and WHOIS checks with change detection, real-time Telegram alerts and a daily digest.</p>
+                <ul class="tags"><li>Go</li><li>CodeIgniter 4</li><li>Docker</li></ul>
+              </div>
+            </article>
+            <article class="card reveal" data-kind="internal">
+              <div class="thumb thumb-art art-iot" aria-hidden="true"><span>IoT</span></div>
+              <div class="card-body">
+                <p class="meta">Sep 2025 · <span class="badge">Internal</span></p>
+                <h3>Data Center Temperature Monitoring</h3>
+                <p>ESP32 sensors with three-state thresholds and rate-limited alerts that repeat every minute until recovery.</p>
+                <ul class="tags"><li>C++</li><li>ESP32</li><li>MySQL</li></ul>
+              </div>
+            </article>
+            <article class="card reveal" data-kind="internal">
+              <div class="thumb thumb-art art-smsc" aria-hidden="true"><span>SMPP</span></div>
+              <div class="card-body">
+                <p class="meta">Sep 2025 · <span class="badge">Internal</span></p>
+                <h3>MOS – SMSC Integration</h3>
+                <p>Kannel and SMSC integration for short code 1881 subscriptions: routing, delivery-report correlation, retries and throughput control.</p>
+                <ul class="tags"><li>Go</li><li>Kannel</li><li>Docker</li></ul>
+              </div>
+            </article>
+            <article class="card reveal" data-kind="internal">
+              <div class="thumb thumb-art art-cell" aria-hidden="true"><span>Cell-ID</span></div>
+              <div class="card-body">
+                <p class="meta">Oct 2025 · <span class="badge">Internal</span></p>
+                <h3>Familink Cell-ID Access Control</h3>
+                <p>Location checks against allowed cells every minute; automatic internet barring and unbarring with Telegram notifications.</p>
+                <ul class="tags"><li>Go</li><li>Redis</li><li>Telegram Bot API</li></ul>
+              </div>
+            </article>
+          </div>
+          <div class="more-wrap"><button type="button" class="btn btn-ghost" id="more-projects">Show all projects</button></div>
+        </div>
+      </section>
+
+      <!-- Moxtel -->
+      <section id="moxtel" class="section product">
+        <div class="wrap product-grid">
+          <div class="reveal">
+            <p class="kicker kicker-red">My software</p>
+            <div class="product-title">
+              <img src="assets/img/moxtel-icon.svg" alt="" width="56" height="56" />
+              <h2>Moxtel</h2>
+            </div>
+            <p class="lead">A free all-in-one terminal for Windows 10 and 11 — one window for every server you manage.</p>
+            <ul class="checks">
+              <li>SSH, Telnet, RDP, VNC, SFTP/FTP/S3, Serial, Mosh, WSL — 15 session types</li>
+              <li>Auto Transfer: scheduled upload, download, mirror and sync with history and alerts</li>
+              <li>Jump hosts, proxies, tunnels, Pageant and SSH certificates</li>
+              <li>Network tools, terminal recording, encrypted local password vault</li>
+            </ul>
+            <div class="cta">
+              <a class="btn btn-red" href="https://github.com/sergiojosevalente/moxtel/releases/latest" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>
+                Download for Windows
+              </a>
+              <a class="btn btn-ghost" href="https://github.com/sergiojosevalente/moxtel" target="_blank" rel="noopener">Learn more</a>
+            </div>
+            <p class="fine">Freeware · no account, no cloud, no telemetry · Windows 10/11 (64-bit)</p>
+          </div>
+          <div class="product-shot reveal">
+            <img loading="lazy" src="assets/img/moxtel-screen.webp" alt="Moxtel with four SSH terminals side by side" width="1440" height="900" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" class="section alt">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <p class="kicker">Skills</p>
+            <h2>What I work with</h2>
+          </div>
+          <div class="skills">
+            <div class="skill-group reveal"><h3>Languages</h3><ul class="tags big"><li>Go</li><li>PHP</li><li>JavaScript</li><li>Python</li><li>C++</li></ul></div>
+            <div class="skill-group reveal"><h3>Frameworks</h3><ul class="tags big"><li>CodeIgniter 4</li><li>Laravel</li><li>Go Fiber</li><li>Flutter</li></ul></div>
+            <div class="skill-group reveal"><h3>Databases</h3><ul class="tags big"><li>MySQL</li><li>PostgreSQL</li><li>Oracle</li><li>MongoDB</li><li>Redis</li></ul></div>
+            <div class="skill-group reveal"><h3>Platform &amp; DevOps</h3><ul class="tags big"><li>Docker</li><li>Nginx</li><li>Apache</li><li>APISIX</li><li>Grafana</li><li>Git</li><li>CI/CD</li></ul></div>
+            <div class="skill-group reveal"><h3>Integration &amp; security</h3><ul class="tags big"><li>REST API</li><li>JWT</li><li>Telegram Bot API</li><li>SMPP / Kannel</li><li>QR codes</li><li>Cyber security</li></ul></div>
+            <div class="skill-group reveal"><h3>Also</h3><ul class="tags big"><li>IoT (ESP32)</li><li>IT troubleshooting</li><li>System documentation</li><li>Asset management</li><li>Training &amp; coaching</li></ul></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Recognition -->
+      <section id="recognition" class="section">
+        <div class="wrap recog-grid">
+          <div class="reveal">
+            <p class="kicker">Recognition</p>
+            <h2>Awards</h2>
+            <ul class="awards">
+              <li><span class="award-year">2025</span><div><strong>Best IT Apps</strong><p>Mobile Network Operation, Telkomcel</p></div></li>
+              <li><span class="award-year">2024</span><div><strong>Best BSS, Core and Datacom — Band VI</strong><p>Mobile Network Operation, Telkomcel</p></div></li>
+              <li><span class="award-year">2024</span><div><strong>One TELIN Appreciation</strong><p>Impressive Collaboration on Special Project V-Core</p></div></li>
+              <li><span class="award-year">ODP</span><div><strong>Officer Development Program</strong><p>Telkomcel</p></div></li>
+            </ul>
+          </div>
+          <div class="reveal">
+            <p class="kicker">Learning</p>
+            <h2>Certifications</h2>
+            <ul class="certs">
+              <li>Google IT Automation with Python — Coursera</li>
+              <li>Linux Server Administrator — ProudIT</li>
+              <li>Fundamental Cyber Security — Merdeka Siber</li>
+              <li>Learning Go-Lang for Beginners — Codepolitan</li>
+              <li>Cyber Physical Systems — Telkom University</li>
+              <li>Basic Network Training — Adaptive Network Laboratory</li>
+              <li>Youth Internship Programme — UNDP (YEES)</li>
+              <li>Key Account Management — Sinergi Selaras Academy</li>
+            </ul>
+            <details class="more">
+              <summary>Show all 17 certifications</summary>
+              <ul class="certs">
+                <li>Basic Git — Codepolitan</li>
+                <li>Command Line — Codepolitan</li>
+                <li>Algorithm Basics — Codepolitan</li>
+                <li>Introduction to Databases Using MySQL — Codepolitan</li>
+                <li>Using MySQL Databases in PHP Programming — Codepolitan</li>
+                <li>PHP 8 and MySQL: Complete CRUD Guide for Beginners — Codepolitan</li>
+                <li>English — ETDA &amp; Lorosa'e English Institute</li>
+                <li>Indonesian — Bahasa Indonesia bagi Penutur Asing (BIPA)</li>
+                <li>Prompt Linux — Merdeka Siber</li>
+              </ul>
+            </details>
+            <p class="fine">Ongoing: Merdeka Siber bootcamp · Akademi Crypto · Codepolitan KelasFullstack.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Organizations -->
+      <section class="section orgs-section alt">
+        <div class="wrap">
+          <p class="kicker center reveal">Organizations I've worked with</p>
+          <ul class="orgs reveal">
+            <li><img loading="lazy" src="assets/img/orgs/tcel.webp" alt="Telkomcel" height="40" /></li>
+            <li><img loading="lazy" src="assets/img/orgs/intl.webp" alt="INTL" height="48" /></li>
+            <li><img loading="lazy" src="assets/img/orgs/xgrr.webp" alt="Xanana Gusmão Reading Room" height="56" /></li>
+            <li><img loading="lazy" src="assets/img/orgs/tais2025.webp" alt="TAIS 2025" height="56" /></li>
+            <li><img loading="lazy" src="assets/img/orgs/ics.webp" alt="ICS" height="56" /></li>
+            <li><img loading="lazy" src="assets/img/orgs/msa.webp" alt="Multi Science Academy" height="56" /></li>
+            <li><img loading="lazy" src="assets/img/orgs/skolas.webp" alt="SKOLAS" height="56" /></li>
+            <li><img loading="lazy" src="assets/img/orgs/mjdac.webp" alt="MJDAC" height="56" /></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="section">
+        <div class="wrap">
+          <div class="contact-card reveal">
+            <div>
+              <p class="kicker">Contact</p>
+              <h2>Let's build something useful</h2>
+              <p class="sub">A project, a collaboration or a training session? Send me a message — I usually reply within a few days.</p>
+            </div>
+            <div class="contact-actions">
+              <a class="contact-item" href="mailto:sergiojosevalente@gmail.com">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/></svg>
+                <span><strong>Email</strong>sergiojosevalente@gmail.com</span>
+              </a>
+              <a class="contact-item" href="https://linkedin.com/in/sergio-jose-valente-da-cruz-4430161b8" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4v11H4zM6 4a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM10 9h4v1.6c.6-1 1.9-1.9 3.6-1.9C20.6 8.7 21 11 21 13.4V20h-4v-5.8c0-1.3-.3-2.6-1.8-2.6s-2.2 1.1-2.2 2.6V20h-3z"/></svg>
+                <span><strong>LinkedIn</strong>Sergio Jose Valente Da Cruz</span>
+              </a>
+              <a class="contact-item" href="https://github.com/sergiojosevalente" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.3-4-2-6-2.5m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+                <span><strong>GitHub</strong>@sergiojosevalente</span>
+              </a>
+              <a class="btn btn-primary" href="assets/cv/Sergio-Jose-Valente-Da-Cruz-CV.pdf" download>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>
+                Download CV (PDF)
+              </a>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- Hero Section End -->
+      </section>
+    </main>
 
-    <!-- About Section Start -->
-    <section id="about" class="pt-36 pb-32 dark:bg-dark">
-      <div class="container">
-        <div class="flex flex-wrap">
-          <div class="mb-10 w-full px-4 lg:w-1/2">
-            <h4 class="mb-3 text-lg font-bold uppercase text-primary">About Me</h4>
-            <h2 class="mb-5 max-w-md text-3xl font-bold text-dark dark:text-white lg:text-4xl">Empowering Digital Solutions for Timor-Leste</h2>
-            <p class="max-w-xl text-base font-medium text-secondary lg:text-lg">I’m an experienced Full-Stack Developer and Database Specialist with a proven track record delivering database-driven applications and IT solutions across government and corporate sectors in Timor-Leste. I specialize in backend development, data systems, and technical training.</p>
-          </div>
-          <div class="w-full px-4 lg:w-1/2">
-            <h3 class="mb-4 text-2xl font-semibold text-dark dark:text-white lg:pt-10 lg:text-3xl">Let’s Connect</h3>
-            <p class="mb-6 text-base font-medium text-secondary lg:text-lg">
-              Find me on social media and let's collaborate to build impactful and scalable tech solutions for our community.            </p>
-            <div class="flex items-center">
-              <!-- Facebook -->
-              <a
-                href="https://facebook.com/sergio.valente.3517"
-                target="_blank"
-                class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
-              >
-                <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <title>Facebook</title>
-                  <path
-                    d="M24 12.073c0-6.627-5.373-12-12-12S0 5.446 0 12.073c0 5.991 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.356c0-3.007 1.792-4.668 4.533-4.668 1.312 0 2.686.235 2.686.235v2.953h-1.513c-1.491 0-1.953.927-1.953 1.875v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.064 24 12.073z"
-                  />
-                </svg>
-              </a>
-
-              <!-- LinkedIn -->
-              <a
-                href="https://linkedin.com/in/sergio-jose-valente-da-cruz-4430161b8"
-                target="_blank"
-                class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
-              >
-                <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <title>LinkedIn</title>
-                  <path
-                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
-                  />
-                </svg>
-              </a>
-
-              <!-- GitHub -->
-              <a
-                href="https://github.com/sergiojosevalente"
-                target="_blank"
-                class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
-              >
-                <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <title>GitHub</title>
-                  <path
-                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 
-                    0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 
-                    17.07 3.633 16.7 3.633 16.7c-1.087-.744.083-.729.083-.729 
-                    1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.418-1.305.762-1.605-2.665-.3-5.466-1.334-5.466-5.93 
-                    0-1.31.467-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 
-                    3.3 1.23a11.52 11.52 0 0 1 3-.405c1.02.005 2.045.138 
-                    3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 
-                    3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 
-                    5.92.42.36.81 1.096.81 2.215 0 1.6-.015 2.89-.015 
-                    3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 
-                    12.297c0-6.627-5.373-12-12-12"
-                  />
-                </svg>
-              </a>
-
-
-              <!-- Instagram -->
-              <a
-                href="https://instagram.com/sergio_jose_valente"
-                target="_blank"
-                class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
-              >
-                <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <title>Instagram</title>
-                  <path
-                    d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"
-                  />
-                </svg>
-              </a>
-
-              <!-- Twitter -->
-              <a
-                href="https://x.com/sergiojose031"
-                target="_blank"
-                class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
-              >
-                <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <title>Twitter</title>
-                  <path
-                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
-                  />
-                </svg>
-              </a>
-
-              <!-- TikTok -->
-              <a
-                href="https://www.tiktok.com/@sergio_jose_valente?_t=ZS-8waZ30JwazV&_r=1"
-                target="_blank"
-                class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
-              >
-                <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <title>TikTok</title>
-                  <path
-                    d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"
-                  />
-                </svg>
-              </a>
-
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- About Section End -->
-
-    <section id="portfolio" class="bg-slate-100 pt-36 pb-16 dark:bg-slate-800">
-  <div class="container">
-    <div class="w-full px-4">
-      <div class="mx-auto mb-16 max-w-xl text-center">
-        <h4 class="mb-2 text-lg font-semibold text-primary">Portfolio</h4>
-        <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl lg:text-5xl">Latest Projects</h2>
-        <p class="text-md font-medium text-secondary md:text-lg">
-          A selection of real-world projects and internal systems I've developed for public, private, and governmental organizations.
-        </p>
-      </div>
-    </div>
-
-    <div class="flex w-full flex-wrap justify-center px-4 xl:mx-auto xl:w-10/12">
-
-      <!-- Xanana Gusmão Reading Room -->
-      <div class="mb-12 p-4 md:w-1/2">
-        <a href="https://www.xananagusmaoreadingroom.tl/" target="_blank">
-          <div class="overflow-hidden rounded-md shadow-md">
-            <img src="dist/img/portfolio/xanana-reading-room.png" alt="Xanana Reading Room" class="w-full object-cover aspect-video" />
-          </div>
-        </a>
-        <h3 class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white">Xanana Gusmão Reading Room</h3>
-        <p class="text-base font-medium text-secondary">A public-facing web platform for course registration, digital certification, and event scheduling with QR validation.</p>
-      </div>
-
-
-      
-      <!-- Jogos CPLP 2025 -->
-      <div class="mb-12 p-4 md:w-1/2">
-        <a href="https://jogoscplp2025.tl/" target="_blank">
-          <div class="overflow-hidden rounded-md shadow-md">
-            <img src="dist/img/portfolio/jogos-cplp.png" alt="Jogos CPLP 2025" class="w-full object-cover aspect-video" />
-          </div>
-        </a>
-        <h3 class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white">Official Portal for Jogos CPLP 2025</h3>
-        <p class="text-base font-medium text-secondary">Portal for athlete registration and QR-based ID validation with real-time mobile verification app.</p>
-      </div>
-
-
-      <div class="mb-12 p-4 md:w-1/2">
-        <a href="https://intl.tl/" target="_blank">
-          <div class="overflow-hidden rounded-md shadow-md">
-            <img src="dist/img/portfolio/intl.png" alt="INTL Employee Management" class="w-full object-cover aspect-video" />
-          </div>
-        </a>
-        <h3 class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white">INTL Employee Management System</h3>
-        <p class="text-base font-medium text-secondary">
-          Internal web platform for managing employee data, attendance tracking, and operational reports for Timor-Leste’s national printing office (INTL). <strong>Access Restricted</strong>.
-        </p>
-      </div>
-
-
-
-      <!-- TAIS 2025 -->
-      <div class="mb-12 p-4 md:w-1/2">
-        <a href="https://tais.tcel.tl/" target="_blank">
-          <div class="overflow-hidden rounded-md shadow-md">
-            <img src="dist/img/portfolio/tais2025.png" alt="TAIS 2025" class="w-full object-cover aspect-video" />
-          </div>
-        </a>
-        <h3 class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white">Telkomcel Annual Internationnal Summit (TAIS) - 2025 Platform</h3>
-        <p class="text-base font-medium text-secondary">Integrated platform for managing international summit attendees, schedules, and speaker content, developed using Go and Flutter.</p>
-      </div>
-
-      <!-- ICS Library Management -->
-      <div class="mb-12 p-4 md:w-1/2">
-        <a href="https://biblioteka.ics.edu.tl/" target="_blank">
-          <div class="overflow-hidden rounded-md shadow-md">
-            <img src="dist/img/portfolio/icsportal.png" alt="ICS Library System" class="w-full object-cover aspect-video" />
-          </div>
-        </a>
-        <h3 class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white">ICS Library Management System</h3>
-        <p class="text-base font-medium text-secondary">Barcode-based system for physical book lending, student tracking, and visitor monitoring developed in CodeIgniter 4.</p>
-      </div>
-
-      <!-- Internal Projects -->
-      <div class="mb-12 p-4 md:w-1/2">
-        <div class="overflow-hidden rounded-md shadow-md">
-          <img src="dist/img/portfolio/vasinternal.png" alt="VAS Management" class="w-full object-cover aspect-video" />
-        </div>
-        <h3 class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white">Telkomcel VAS & SMS Platform</h3>
-        <p class="text-base font-medium text-secondary">Internal application for managing Telkomcel’s Value-Added Services. <strong>Access Restricted</strong>.</p>
-      </div>
-
-      <!-- Internal Projects -->
-      <div class="mb-12 p-4 md:w-1/2">
-        <div class="overflow-hidden rounded-md shadow-md">
-          <img src="dist/img/portfolio/vasbroadcast.png" alt="VAS Broadcast" class="w-full object-cover aspect-video" />
-        </div>
-        <h3 class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white">Telkomcel VAS & SMS Platform</h3>
-        <p class="text-base font-medium text-secondary">Internal application for managing Telkomcel’s Value-Added Services. <strong>Access Restricted</strong>.</p>
-      </div>
-
-      <div class="mb-12 p-4 md:w-1/2">
-        <div class="overflow-hidden rounded-md shadow-md">
-          <img src="dist/img/portfolio/enterpriseticketing.png" alt="Telkomcel Ticketing" class="w-full object-cover aspect-video" />
-        </div>
-        <h3 class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white">Enterprise Ticketing System</h3>
-        <p class="text-base font-medium text-secondary">Internal web application to manage corporate client support requests and escalation workflow. <strong>Access Restricted</strong>.</p>
-      </div>
-
-      <div class="mb-12 p-4 md:w-1/2">
-        <a href="http://multiscienceacademy.com/" target="_blank">
-          <div class="overflow-hidden rounded-md shadow-md">
-            <img src="dist/img/portfolio/msaskolas.png" alt="MSA Platform" class="w-full object-cover aspect-video" />
-          </div>
-        </a>
-        <h3 class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white">Multi Science Academy (MSA)</h3>
-        <p class="text-base font-medium text-secondary">An educational platform built for digital classrooms, bootcamps, and academic job matching using modern full-stack tech.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-    <!-- Portfolio Section End -->
-
-    <!-- Clients Section Start -->
-    <section id="clients" class="bg-slate-800 pt-36 pb-32 dark:bg-slate-300">
-  <div class="container">
-    <div class="w-full px-4">
-      <div class="mx-auto mb-16 text-center">
-        <h4 class="mb-2 text-lg font-semibold text-primary">Clients</h4>
-        <h2 class="mb-4 text-3xl font-bold text-white dark:text-dark sm:text-4xl lg:text-5xl">Organizations I've Collaborated With</h2>
-        <p class="text-md font-medium text-secondary md:text-lg">
-          These are some of the institutions and organizations I've worked with through various web development, database systems, and digital transformation projects.
-        </p>
-      </div>
-    </div>
-
-    <div class="w-full px-4">
-      <div class="flex flex-wrap items-center justify-center">
-        <a href="#" class="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8">
-          <img src="dist/img/clients/tcel.png" alt="Telkomcel" />
-        </a>
-        <a href="#" class="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8">
-          <img src="dist/img/clients/intl.svg" alt="INTL" />
-        </a>
-        <a href="https://www.xananagusmaoreadingroom.tl/" target="_blank" class="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8">
-          <img src="dist/img/clients/xgrr.jpg" alt="Xanana Reading Room" />
-        </a>
-        <a href="#" class="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8">
-          <img src="dist/img/clients/mjdac.jpg" alt="MJDAC" />
-        </a>
-        <a href="https://biblioteka.ics.edu.tl/" target="_blank" class="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8">
-          <img src="dist/img/clients/ics.png" alt="ICS" />
-        </a>
-        <a href="https://multiscienceacademy.com/" target="_blank" class="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8">
-          <img src="dist/img/clients/msa.png" alt="Multi Science Academy" />
-        </a>
-        <a href="https://multiscienceacademy.com/" target="_blank" class="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8">
-          <img src="dist/img/clients/skolas.jpg" alt="SKOLAS" />
-        </a>
-        <a href="https://tais.tcel.tl/" target="_blank" class="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8">
-          <img src="dist/img/clients/tais2025.png" alt="TAIS 2025" />
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-    <!-- Clients Section End -->
-
-    <!-- Blog Section Start -->
-    <!-- <section id="blog" class="bg-slate-100 pt-36 pb-32 dark:bg-dark">
-  <div class="container">
-    <div class="w-full px-4">
-      <div class="mx-auto mb-16 max-w-xl text-center">
-        <h4 class="mb-2 text-lg font-semibold text-primary">Blog</h4>
-        <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl lg:text-5xl">Latest Posts</h2>
-        <p class="text-md font-medium text-secondary md:text-lg">
-          Discover practical tips, honest reviews, and daily reflections from the world of tech, creativity, and productivity.
-        </p>
-      </div>
-    </div>
-
-    <div class="flex flex-wrap">
-      <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-        <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800">
-          <img src="https://source.unsplash.com/360x200?programming" alt="Programming" class="w-full" />
-          <div class="py-8 px-6">
-            <h3>
-              <a href="#" class="mb-3 block truncate text-xl font-semibold text-dark hover:text-primary dark:text-white">
-                How to Start Learning Programming Efficiently
-              </a>
-            </h3>
-            <p class="mb-6 text-base font-medium text-secondary">
-              Learn step-by-step strategies to build your coding skills and stay motivated throughout your programming journey.
-            </p>
-            <a href="#" class="rounded-lg bg-primary py-2 px-4 text-sm font-medium text-white hover:opacity-80">Read More</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-        <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800">
-          <img src="https://source.unsplash.com/360x200?mechanical+keyboard" alt="Mechanical Keyboard" class="w-full" />
-          <div class="py-8 px-6">
-            <h3>
-              <a href="#" class="mb-3 block truncate text-xl font-semibold text-dark hover:text-primary dark:text-white">
-                GMMK Pro Mechanical Keyboard: Worth the Hype?
-              </a>
-            </h3>
-            <p class="mb-6 text-base font-medium text-secondary">
-              A deep dive into the design, feel, and performance of the GMMK Pro – the keyboard everyone's talking about.
-            </p>
-            <a href="#" class="rounded-lg bg-primary py-2 px-4 text-sm font-medium text-white hover:opacity-80">Read More</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-        <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800">
-          <img src="https://source.unsplash.com/360x200?coffee" alt="Coffee" class="w-full" />
-          <div class="py-8 px-6">
-            <h3>
-              <a href="#" class="mb-3 block truncate text-xl font-semibold text-dark hover:text-primary dark:text-white">
-                Finding Focus Over a Cup of Coffee
-              </a>
-            </h3>
-            <p class="mb-6 text-base font-medium text-secondary">
-              How small rituals like your morning coffee can boost creativity, concentration, and mindful work.
-            </p>
-            <a href="#" class="rounded-lg bg-primary py-2 px-4 text-sm font-medium text-white hover:opacity-80">Read More</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-
-    <!-- Blog Section End -->
-
-    <!-- Contact Section Start -->
-    <section id="contact" class="pt-36 pb-32 dark:bg-slate-800">
-  <div class="container">
-    <div class="w-full px-4">
-      <div class="mx-auto mb-16 max-w-xl text-center">
-        <h4 class="mb-2 text-lg font-semibold text-primary">Contact</h4>
-        <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl lg:text-5xl">Get In Touch</h2>
-        <p class="text-md font-medium text-secondary md:text-lg">
-          Have a question, project idea, or just want to say hello? Fill out the form below and we'll get back to you shortly.
-        </p>
-      </div>
-    </div>
-
-    <form>
-      <div class="w-full lg:mx-auto lg:w-2/3">
-        <div class="mb-8 w-full px-4">
-          <label for="name" class="text-base font-bold text-primary">Full Name</label>
-          <input type="text" id="name" placeholder="Your name" class="w-full rounded-md bg-slate-200 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" />
-        </div>
-        <div class="mb-8 w-full px-4">
-          <label for="email" class="text-base font-bold text-primary">Email Address</label>
-          <input type="email" id="email" placeholder="you@example.com" class="w-full rounded-md bg-slate-200 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" />
-        </div>
-        <div class="mb-8 w-full px-4">
-          <label for="message" class="text-base font-bold text-primary">Message</label>
-          <textarea id="message" placeholder="Type your message here..." class="h-32 w-full rounded-md bg-slate-200 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"></textarea>
-        </div>
-        <div class="w-full px-4">
-          <button type="submit" class="w-full rounded-full bg-primary py-3 px-8 text-base font-semibold text-white transition duration-500 hover:opacity-80 hover:shadow-lg">Send Message</button>
-        </div>
-      </div>
-    </form>
-  </div>
-</section>
-
-    <!-- Contact Section End -->
-
-    <!-- Footer Start -->
-    <footer class="bg-dark pt-24 pb-12">
-      <div class="container">
-        <div class="flex flex-wrap">
-          <div class="mb-12 w-full px-4 font-medium text-slate-300 md:w-1/3">
-            <h2 class="mb-5 text-4xl font-bold text-white">Sergio</h2>
-            <h3 class="mb-2 text-2xl font-bold">Contact Info</h3>
-            <p>sergiojosevalente@gmail.com</p>
-            <p>Dili - Timor-Leste</p>
-          </div>
-          <div class="mb-12 w-full px-4 md:w-1/3">
-            <h3 class="mb-5 text-xl font-semibold text-white">Blog Categories</h3>
-            <ul class="text-slate-300">
-              <li>
-                <a href="#" class="mb-3 inline-block text-base hover:text-primary">Programming</a>
-              </li>
-              <li>
-                <a href="#" class="mb-3 inline-block text-base hover:text-primary">Technology</a>
-              </li>
-              <li>
-                <a href="#" class="mb-3 inline-block text-base hover:text-primary">Lifestyle</a>
-              </li>
-            </ul>
-          </div>
-          <div class="mb-12 w-full px-4 md:w-1/3">
-            <h3 class="mb-5 text-xl font-semibold text-white">Quick Links</h3>
-            <ul class="text-slate-300">
-              <li>
-                <a href="#home" class="mb-3 inline-block text-base hover:text-primary">Home</a>
-              </li>
-              <li>
-                <a href="#about" class="mb-3 inline-block text-base hover:text-primary">About</a>
-              </li>
-              <li>
-                <a href="#portfolio" class="mb-3 inline-block text-base hover:text-primary">Portfolio</a>
-              </li>
-              <li>
-                <a href="#clients" class="mb-3 inline-block text-base hover:text-primary">Clients</a>
-              </li>
-              <li>
-                <a href="#blog" class="mb-3 inline-block text-base hover:text-primary">Blog</a>
-              </li>
-              <li>
-                <a href="#contact" class="mb-3 inline-block text-base hover:text-primary">Contact</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="w-full border-t border-slate-700 pt-10">
-          <div class="mb-5 flex items-center justify-center">
-            <!-- Youtube -->
-            <a
-              href="https://youtube.com/webprogrammingunpas"
-              target="_blank"
-              class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
-            >
-              <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <title>YouTube</title>
-                <path
-                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
-                />
-              </svg>
-            </a>
-
-            <!-- Instagram -->
-            <a
-              href="https://instagram.com/sergio_jose_valente"
-              target="_blank"
-              class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
-            >
-              <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <title>Instagram</title>
-                <path
-                  d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"
-                />
-              </svg>
-            </a>
-
-            <!-- Twitter -->
-            <a
-              href="https://x.com/sergiojose031"
-              target="_blank"
-              class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
-            >
-              <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <title>Twitter</title>
-                <path
-                  d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
-                />
-              </svg>
-            </a>
-
-            <!-- TikTok -->
-            <a
-              href="https://www.tiktok.com/@sergio_jose_valente"
-              target="_blank"
-              class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
-            >
-              <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <title>TikTok</title>
-                <path
-                  d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"
-                />
-              </svg>
-            </a>
-
-            <!-- LinkedIn -->
-            <a
-              href="https://linkedin.com/in/sergio-jose-valente-da-cruz-4430161b8"
-              target="_blank"
-              class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
-            >
-              <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <title>LinkedIn</title>
-                <path
-                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
-                />
-              </svg>
-            </a>
-          </div>
-          <p class="text-center text-xs font-medium text-slate-500">
-            Built with <span class="text-pink-500">❤️</span> by <a href="https://facebook.com/sergio.valente.3517" target="_blank" class="font-bold text-primary">Sergio Jose Valente</a>, powered by
-            <a href="https://tailwindcss.com" target="_blank" class="font-bold text-sky-500">Tailwind CSS</a>.
-          </p>
-        </div>
+    <footer class="footer">
+      <div class="wrap footer-inner">
+        <p>© <span id="year">2026</span> Sergio Jose Valente Da Cruz · Dili, Timor-Leste</p>
+        <nav aria-label="Footer">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#moxtel">Moxtel</a>
+          <a href="assets/cv/Sergio-Jose-Valente-Da-Cruz-CV.pdf" download>CV</a>
+        </nav>
       </div>
     </footer>
-    <!-- Footer End -->
 
-    <!-- Back to top Start -->
-    <a href="#home" class="fixed bottom-4 right-4 z-[9999] hidden h-14 w-14 items-center justify-center rounded-full bg-primary p-4 hover:animate-pulse" id="to-top">
-      <span class="mt-2 block h-5 w-5 rotate-45 border-t-2 border-l-2"></span>
+    <a href="#top" class="to-top" id="to-top" aria-label="Back to top">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m0 0l-6 6m6-6l6 6"/></svg>
     </a>
-    <!-- Back to top End -->
 
-    <script src="dist/js/script.js"></script>
+    <script src="assets/js/site.js" defer></script>
   </body>
 </html>
