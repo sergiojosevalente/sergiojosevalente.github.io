@@ -205,11 +205,15 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 .art-ssl { background: linear-gradient(135deg, #16a34a, #65a30d); }
 .art-iot { background: linear-gradient(135deg, #f97316, #db2777); }
 .art-smsc { background: linear-gradient(135deg, #0891b2, #4f46e5); }
+.art-grafana { background: linear-gradient(135deg, #f97316, #facc15); }
 .art-cell { background: linear-gradient(135deg, #9333ea, #db2777); }
 .card-body { padding: 18px 20px 20px; display: flex; flex-direction: column; flex: 1; }
 .card-body p { color: var(--muted); font-size: 0.95rem; }
 .meta { font-family: var(--mono); font-size: 0.78rem !important; margin-bottom: 6px !important; }
 .card-body h3 { margin-bottom: 8px; }
+.points { margin: 0 0 14px; padding-left: 18px; color: var(--muted); font-size: 0.9rem; }
+.points li { margin-bottom: 4px; }
+.badge-new { color: #047857; background: rgba(16, 185, 129, 0.15); }
 .badge { font-family: var(--font); font-weight: 700; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: #b45309; background: rgba(245, 158, 11, 0.15); padding: 2px 8px; border-radius: 6px; }
 .tags { list-style: none; padding: 0; margin: auto 0 0; display: flex; flex-wrap: wrap; gap: 6px; }
 .tags li { font-size: 0.75rem; font-weight: 600; color: var(--primary); background: var(--primary-soft); padding: 3px 10px; border-radius: 999px; }
