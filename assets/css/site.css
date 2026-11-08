@@ -223,6 +223,23 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 .link { margin-top: 14px; font-weight: 600; font-size: 0.9rem; color: var(--primary); text-decoration: none; }
 .link:hover { text-decoration: underline; }
 
+/* ---------- 2026 work ---------- */
+.work-groups { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; align-items: start; }
+.work-group { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 24px; }
+.work-group > h3 { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; }
+.wg-icon { display: inline-grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; color: var(--primary); background: var(--primary-soft); flex: none; }
+.wg-icon svg { width: 18px; height: 18px; }
+.work-list { list-style: none; padding: 0; margin: 0; }
+.work-list > li { padding: 14px 0 14px 18px; border-bottom: 1px dashed var(--border); position: relative; }
+.work-list > li:last-child { border-bottom: 0; padding-bottom: 0; }
+.work-list > li::before { content: ""; position: absolute; left: 2px; top: 22px; width: 7px; height: 7px; border-radius: 2px; background: var(--primary); transform: rotate(45deg); }
+.work-list h4 { margin: 0 0 4px; font-size: 0.98rem; font-weight: 700; line-height: 1.35; }
+.work-list p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+.work-list a { color: var(--primary); font-weight: 600; text-decoration: none; }
+.work-list a:hover { text-decoration: underline; }
+.work-list .tags { margin-top: 10px; }
+.timeline ul a { color: var(--primary); font-weight: 600; text-decoration: none; }
+
 /* ---------- product ---------- */
 .product { background: linear-gradient(160deg, #15171a, #2a2d30); color: #e9ebef; }
 .product .lead, .product .fine { color: #b8bec9; }
@@ -298,6 +315,7 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
   .hero-photo { width: min(320px, 80%); order: -1; }
   .stats { grid-template-columns: repeat(2, 1fr); }
   .skills { grid-template-columns: repeat(2, 1fr); }
+  .work-groups { grid-template-columns: 1fr; }
   .product-shot { transform: none; }
   .fc-1 { left: -12px; }
   .fc-2 { right: -12px; }
