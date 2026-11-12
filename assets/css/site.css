@@ -98,6 +98,19 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
   :root:not([data-theme="light"]) .i-moon { display: block; }
 }
 .menu-btn { display: none; }
+.lang-pick { position: relative; display: inline-flex; align-items: center; height: 40px; border-radius: 10px; border: 1px solid var(--border); background: var(--surface); color: var(--text); }
+.lang-pick:hover, .lang-pick:focus-within { border-color: var(--primary); }
+.lang-pick svg { position: absolute; left: 10px; width: 16px; height: 16px; color: var(--muted); pointer-events: none; }
+.lang-pick select {
+  appearance: none; -webkit-appearance: none; border: 0; background: transparent; color: inherit;
+  font: inherit; font-weight: 600; font-size: 0.85rem; height: 100%; width: 76px; padding: 0 10px 0 32px; cursor: pointer; border-radius: 10px;
+}
+.lang-pick select:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+.lang-pick option { color: #0f172a; background: #fff; }
+
+/* Hide the page for a moment while a saved non-English language is applied. */
+.i18n-wait body { visibility: hidden; }
+:lang(zh) { --font: "Inter", "PingFang SC", "Microsoft YaHei", "Noto Sans SC", "Noto Sans CJK SC", system-ui, sans-serif; }
 
 /* ---------- buttons ---------- */
 .btn {

@@ -6,6 +6,7 @@ Plain HTML, CSS and JavaScript, no build step:
 
 - `index.html` — the page
 - `assets/css/site.css`, `assets/js/site.js` — styles (light/dark) and small enhancements
+- `assets/js/i18n.js` — English / Bahasa Indonesia / Tetun / 中文 translations (English source text lives in `index.html`; add a row per new string). Defaults: English, dark theme
 - `assets/img/` — WebP images (projects, organizations, portrait, Moxtel)
 - `assets/cv/` — the public CV (internal addresses and references removed)
 

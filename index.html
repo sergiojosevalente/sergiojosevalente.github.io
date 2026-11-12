@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="auto">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -18,11 +18,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/site.css" />
     <script>
-      // Apply the saved theme before the page paints (no flash).
-      try {
-        var t = localStorage.getItem('theme');
-        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
-      } catch (e) {}
+      // Apply the saved theme and language before the page paints (no flash).
+      // Defaults: dark theme, English.
+      (function (root) {
+        var t = null, l = null;
+        try { t = localStorage.getItem('theme'); l = localStorage.getItem('lang'); } catch (e) {}
+        root.dataset.theme = t === 'light' ? 'light' : 'dark';
+        if (l === 'id' || l === 'tet' || l === 'zh') {
+          root.lang = l === 'zh' ? 'zh-Hans' : l;
+          root.classList.add('i18n-wait');
+          setTimeout(function () { root.classList.remove('i18n-wait'); }, 2500);
+        }
+      })(document.documentElement);
     </script>
     <script type="application/ld+json">
       {
@@ -46,7 +53,7 @@
 
     <header class="nav" id="top">
       <div class="wrap nav-inner">
-        <a href="#top" class="brand" aria-label="Sergio Jose Valente, home">sergio<span>.</span></a>
+        <a href="#top" class="brand" aria-label="Sergio Jose Valente, home" translate="no">sergio<span>.</span></a>
         <nav id="menu" class="menu" aria-label="Main">
           <a href="#about">About</a>
           <a href="#experience">Experience</a>
@@ -57,6 +64,15 @@
           <a href="#contact">Contact</a>
         </nav>
         <div class="nav-actions">
+          <label class="lang-pick" title="Language">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+            <select id="lang" aria-label="Language" translate="no">
+              <option value="en" lang="en">EN</option>
+              <option value="id" lang="id">ID</option>
+              <option value="tet" lang="tet">TET</option>
+              <option value="zh" lang="zh-Hans">中文</option>
+            </select>
+          </label>
           <button class="icon-btn" id="theme" type="button" aria-label="Switch light or dark theme" title="Light / dark">
             <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
             <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
@@ -659,6 +675,7 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m0 0l-6 6m6-6l6 6"/></svg>
     </a>
 
+    <script src="assets/js/i18n.js" defer></script>
     <script src="assets/js/site.js" defer></script>
   </body>
 </html>

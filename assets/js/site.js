@@ -93,7 +93,7 @@
       if (visible) card.classList.add('in');
     });
     moreBtn.parentElement.hidden = filter !== 'all' || expanded || total <= FIRST;
-    moreBtn.textContent = 'Show all ' + total + ' projects';
+    moreBtn.textContent = window.i18n ? window.i18n.t('Show all {n} projects', { n: total }) : 'Show all ' + total + ' projects';
   }
   chips.forEach(function (chip) {
     chip.addEventListener('click', function () {
@@ -107,6 +107,7 @@
     applyFilter();
   });
   applyFilter();
+  document.addEventListener('langchange', applyFilter);
 
   var year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
