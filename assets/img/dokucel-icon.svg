@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 300" role="img" aria-label="DokuCel">
+  <!-- document outline with folded corner -->
+  <path d="M100 28 H198 L246 76 V228 Q246 250 224 250 H100 Q78 250 78 228 V50 Q78 28 100 28 Z"
+        fill="none" stroke="#9a9a9a" stroke-width="14" stroke-linejoin="round"/>
+  <path d="M198 28 V64 Q198 76 210 76 H246" fill="none" stroke="#9a9a9a" stroke-width="14" stroke-linejoin="round"/>
+  <!-- red cross / pen shape, with a white halo that cuts the outline -->
+  <path d="M96 80 L140 80 L141 113 L252 128 L206 141 L151 149 L151 202 Q151 226 137 246 L121 280 L105 246
+           Q91 226 91 202 L91 162 L44 178 L14 118 L95 117 Z"
+        fill="#e3141b" stroke="#ffffff" stroke-width="9" stroke-linejoin="round" paint-order="stroke"/>
+  <!-- fountain-pen nib -->
+  <circle cx="121" cy="231" r="8.5" fill="#ffffff"/>
+  <path d="M121 238 V274" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/>
+</svg>

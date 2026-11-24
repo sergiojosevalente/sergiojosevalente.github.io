@@ -10,10 +10,10 @@
   var T = {
     // ----- head, navigation, labels -----
     'Sergio Jose Valente Da Cruz — Full-Stack Developer': ['Sergio Jose Valente Da Cruz — Full-Stack Developer', 'Sergio Jose Valente Da Cruz — Full-Stack Developer', 'Sergio Jose Valente Da Cruz — 全栈开发者'],
-    'Sergio Jose Valente Da Cruz — IT & Application Officer at Telkomcel and Full-Stack Developer in Dili, Timor-Leste. Go, PHP (CodeIgniter 4, Laravel), MySQL, PostgreSQL. Creator of Moxtel.': [
-      'Sergio Jose Valente Da Cruz — IT & Application Officer di Telkomcel dan Full-Stack Developer di Dili, Timor-Leste. Go, PHP (CodeIgniter 4, Laravel), MySQL, PostgreSQL. Pembuat Moxtel.',
-      'Sergio Jose Valente Da Cruz — IT & Application Officer iha Telkomcel no Full-Stack Developer iha Dili, Timor-Leste. Go, PHP (CodeIgniter 4, Laravel), MySQL, PostgreSQL. Kriadór Moxtel nian.',
-      'Sergio Jose Valente Da Cruz — Telkomcel IT 与应用专员，东帝汶帝力的全栈开发者。Go、PHP（CodeIgniter 4、Laravel）、MySQL、PostgreSQL。Moxtel 的作者。'],
+    'Sergio Jose Valente Da Cruz — IT & Application Officer at Telkomcel and Full-Stack Developer in Dili, Timor-Leste. Go, PHP (CodeIgniter 4, Laravel), MySQL, PostgreSQL. Creator of Moxtel and DokuCel.': [
+      'Sergio Jose Valente Da Cruz — IT & Application Officer di Telkomcel dan Full-Stack Developer di Dili, Timor-Leste. Go, PHP (CodeIgniter 4, Laravel), MySQL, PostgreSQL. Pembuat Moxtel dan DokuCel.',
+      'Sergio Jose Valente Da Cruz — IT & Application Officer iha Telkomcel no Full-Stack Developer iha Dili, Timor-Leste. Go, PHP (CodeIgniter 4, Laravel), MySQL, PostgreSQL. Kriadór Moxtel no DokuCel nian.',
+      'Sergio Jose Valente Da Cruz — Telkomcel IT 与应用专员，东帝汶帝力的全栈开发者。Go、PHP（CodeIgniter 4、Laravel）、MySQL、PostgreSQL。Moxtel 和 DokuCel 的作者。'],
     'Building secure, scalable systems for Timor-Leste. Go · PHP · MySQL · PostgreSQL · Docker.': [
       'Membangun sistem yang aman dan skalabel untuk Timor-Leste. Go · PHP · MySQL · PostgreSQL · Docker.',
       'Harii sistema seguru no eskalável ba Timor-Leste. Go · PHP · MySQL · PostgreSQL · Docker.',
@@ -347,6 +347,38 @@
     'Freeware · no account, no cloud, no telemetry · Windows 10/11 (64-bit) ·': ['Freeware · tanpa akun, tanpa cloud, tanpa telemetri · Windows 10/11 (64-bit) ·', 'Freeware · la presiza konta, la iha cloud, la iha telemetria · Windows 10/11 (64-bit) ·', '免费软件 · 无需账号、无云端、无遥测 · Windows 10/11（64 位）·'],
     'Privacy policy': ['Kebijakan privasi', 'Polítika privasidade', '隐私政策'],
     'Moxtel with four SSH terminals side by side': ['Moxtel dengan empat terminal SSH berdampingan', 'Moxtel ho terminal SSH haat lado-ba-lado', 'Moxtel 并排显示四个 SSH 终端'],
+
+    // ----- DokuCel -----
+    'DokuCel — PDF Toolkit for Windows': ['DokuCel — Toolkit PDF untuk Windows', 'DokuCel — Toolkit PDF ba Windows', 'DokuCel — Windows PDF 工具箱'],
+    'DokuCel viewer with a PDF, a Word file and an image open in tabs': ['Penampil DokuCel dengan PDF, file Word dan gambar terbuka di tab', 'Vizualizadór DokuCel ho PDF, arkivu Word no imajen loke iha tab', 'DokuCel 查看器，在标签页中打开了 PDF、Word 文件和图片'],
+    'A free desktop app to edit, sign, convert, merge, split, compress and protect PDFs, with OCR, a PDF viewer and workflows. Files are processed on your own computer; a Docker web version runs behind company SSO.': [
+      'Aplikasi desktop gratis untuk mengedit, menandatangani, mengonversi, menggabung, memisah, mengompres dan melindungi PDF, dengan OCR, penampil PDF dan workflow. File diproses di komputer Anda sendiri; versi web Docker berjalan di balik SSO perusahaan.',
+      "Aplikasaun desktop gratuitu atu edita, asina, konverte, kombina, fahe, kompresa no proteje PDF, ho OCR, vizualizadór PDF no workflow. Arkivu prosesa iha ita-nia komputadór rasik; versaun web Docker la'o iha SSO kompañia nia kotuk.",
+      '免费桌面应用，可编辑、签名、转换、合并、拆分、压缩和保护 PDF，并提供 OCR、PDF 查看器和工作流。文件在你自己的电脑上处理；Docker 网页版运行在公司 SSO 之后。'],
+    'A free PDF toolkit for Windows 10 and 11 — edit, sign, convert and organize PDFs on your own computer.': [
+      'Toolkit PDF gratis untuk Windows 10 dan 11 — edit, tanda tangani, konversi dan atur PDF di komputer Anda sendiri.',
+      'Toolkit PDF gratuitu ba Windows 10 no 11 — edita, asina, konverte no organiza PDF iha ita-nia komputadór rasik.',
+      '免费的 Windows 10/11 PDF 工具箱——在你自己的电脑上编辑、签名、转换和整理 PDF。'],
+    'Edit text and images, fill and sign forms, and redaction that really removes what is underneath': [
+      'Edit teks dan gambar, isi dan tanda tangani formulir, serta redaksi yang benar-benar menghapus isi di bawahnya',
+      "Edita testu no imajen, prenche no asina formuláriu, no redasaun ne'ebé hasai duni kontéudu iha okos",
+      '编辑文字和图片，填写并签署表单，涂黑会真正删除下方的内容'],
+    'Convert to and from Word, Excel, PowerPoint, images and HTML, with OCR for scanned PDFs': [
+      'Konversi dari dan ke Word, Excel, PowerPoint, gambar dan HTML, dengan OCR untuk PDF hasil scan',
+      'Konverte husi no ba Word, Excel, PowerPoint, imajen no HTML, ho OCR ba PDF eskaneadu',
+      '与 Word、Excel、PowerPoint、图片和 HTML 互相转换，并支持扫描 PDF 的 OCR'],
+    'Merge, split, compress, protect, watermark and number pages — 49 tools and reusable workflows': [
+      'Gabung, pisah, kompres, proteksi, watermark dan penomoran halaman — 49 alat dan workflow yang bisa dipakai ulang',
+      'Kombina, fahe, kompresa, proteje, watermark no numeru pájina — ferramenta 49 no workflow ne’ebé bele uza fali',
+      '合并、拆分、压缩、加密、水印和页码——49 个工具及可复用的工作流'],
+    'PDF viewer with “Open with DokuCel” in Windows Explorer, and in-app updates': [
+      'Penampil PDF dengan “Open with DokuCel” di Windows Explorer, dan pembaruan di dalam aplikasi',
+      'Vizualizadór PDF ho “Open with DokuCel” iha Windows Explorer, no atualizasaun iha aplikasaun laran',
+      '内置 PDF 查看器，支持在 Windows 资源管理器中“用 DokuCel 打开”，并可在应用内更新'],
+    'DokuCel home screen with every PDF tool grouped by category': [
+      'Layar beranda DokuCel dengan semua alat PDF dikelompokkan per kategori',
+      'Ekran prinsipál DokuCel ho ferramenta PDF hotu grupu tuir kategoria',
+      'DokuCel 主界面，所有 PDF 工具按类别分组'],
 
     // ----- skills -----
     'What I work with': ['Yang saya gunakan', "Saida mak ha'u uza", '我的技术栈'],

@@ -267,6 +267,12 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 .fine { font-size: 0.85rem; color: var(--muted); }
 .product-shot { border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.12); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45); transform: perspective(1400px) rotateY(-6deg) rotateX(2deg); transition: transform 0.4s; }
 .product-shot:hover { transform: none; }
+/* second product: picture on the left, tilted the other way, a slightly different shade */
+.product-rev { background: linear-gradient(200deg, #17181b, #2b2427); border-top: 1px solid rgba(255, 255, 255, 0.06); }
+@media (min-width: 961px) {
+  .product-rev .product-grid { grid-template-columns: 1.1fr 0.9fr; }
+  .product-rev .product-shot { order: -1; }
+}
 
 /* ---------- skills ---------- */
 .skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
