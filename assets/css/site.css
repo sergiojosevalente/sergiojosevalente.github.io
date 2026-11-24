@@ -339,6 +339,27 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
   .fc-1 { left: -12px; }
   .fc-2 { right: -12px; }
 }
+/* eight menu links: tighter between tablet and wide desktop so the bar never overflows */
+@media (min-width: 881px) and (max-width: 1180px) {
+  .nav-inner { gap: 10px; }
+  .menu { gap: 0; }
+  .menu a { padding: 8px 7px; font-size: 0.9rem; }
+}
+@media (min-width: 881px) and (max-width: 960px) {
+  .menu a { padding: 8px 5px; font-size: 0.85rem; }
+}
+/* below 880px the links move into the menu button's drop-down */
+@media (max-width: 880px) {
+  .menu-btn { display: inline-grid; }
+  .menu {
+    position: absolute; top: 68px; left: 16px; right: 16px; flex-direction: column;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 8px; box-shadow: var(--shadow);
+    display: none;
+  }
+  .menu.open { display: flex; }
+  .menu a { padding: 12px 14px; }
+  .nav-actions { margin-left: auto; }
+}
 @media (max-width: 760px) {
   .menu-btn { display: inline-grid; }
   .hide-sm { display: none; }
